@@ -1,0 +1,22 @@
+{
+  "name": "insomnia-plugin-run-folder-graphql",
+  "version": "1.0.0",
+  "author": "Damian Brzęczek <damian.brzeczek@iteo.com>",
+  "license": "MIT",
+  "description": "",
+  "repository": "github:Brzeczunio/insomnia-plugin-run-folder-graphql",
+  "main": "run-folder-graphql.js",
+  "insomnia": {                    
+    "name": "run-folder-graphql",
+    "description": "This plugin adds an option to each folder's drop-down menu so that all requests within can be ran automatically in order and show results specific for GraphQL. The original code was taken from https://www.npmjs.com/package/insomnia-plugin-run-folder and the author is [Daniel Castro]."
+  },
+  "keywords": [
+    "insomnia",
+    "plugin",
+    "plugins",
+    "request",
+    "requests",
+    "folder",
+    "directory"
+  ]
+}

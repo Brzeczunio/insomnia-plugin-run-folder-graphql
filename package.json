@@ -17,6 +17,7 @@
     "request",
     "requests",
     "folder",
-    "directory"
+    "directory",
+    "graphql"
   ]
 }

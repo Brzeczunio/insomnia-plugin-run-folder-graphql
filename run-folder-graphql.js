@@ -46,7 +46,7 @@ module.exports.requestGroupActions = [
                       </tr>`);
       }
 	  
-	results.push(`<div>Udało się ${requests.length - count} z ${requests.length}</div>`);
+	results.push(`<div>Succeed: ${requests.length - count} of ${requests.length}</div>`);
 
       const css = `table { margin: 0 auto 0 auto; }
                    th, .label--small, label > small { text-align: center; padding: 10px 10px 10px 15px !important; padding-bottom: none !important; font-size: 15px !important; border: 1px solid #4B505C; }

@@ -1,6 +1,6 @@
 module.exports.requestGroupActions = [
   {
-    label: 'Send All Requests',
+    label: 'Send All GraphQL Requests',
     action: async (context, data) => {
       const { requests } = data;
 

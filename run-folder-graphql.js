@@ -16,14 +16,16 @@ module.exports.requestGroupActions = [
                     </tr>`);
       for (const request of requests) {
         const response = await context.network.sendRequest(request);
-		
+
 		const fs = require('fs');
-		var responseData = JSON.parse(fs.readFileSync(response.bodyPath, function (exists){}));
-		
+        var responseData = request.body.mimeType === 'application/graphql' ?
+          JSON.parse(fs.readFileSync(response.bodyPath, function (exists) { }))
+          : {};
+
         var color = getStatusCodeColor(response.statusCode);
         var time = millisecToHumanReadable(response.elapsedTime);
 		var colorTime = getTimeColor(time);
-		
+
 		if(responseData.errors)
 		{
 			results.push(`<tr>
@@ -33,7 +35,7 @@ module.exports.requestGroupActions = [
 							<td id="td_right"><font color="#D8696F">${responseData.errors[0].message}</td>
 							<td id="td_right"><font color="${colorTime}">${time}</td>
 							<td id="td_right">${response.bytesRead}</td>
-						  </tr>`);		
+						  </tr>`);
 			count = count + 1;
 		} else
         results.push(`<tr>
@@ -45,7 +47,7 @@ module.exports.requestGroupActions = [
                         <td id="td_right">${response.bytesRead}</td>
                       </tr>`);
       }
-	  
+
 	results.push(`<div>Succeed: ${requests.length - count} of ${requests.length}</div>`);
 
       const css = `table { margin: 0 auto 0 auto; }
